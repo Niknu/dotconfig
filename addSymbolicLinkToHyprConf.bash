@@ -7,6 +7,8 @@ fi
 
 directory="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-ln -sf "$directory"/hypr/bindings.conf /home/"$USER"/.config/hypr/bindings.conf
-ln -sf "$directory"/hypr/input.conf /home/"$USER"/.config/hypr/input.conf
-ln -sf "$directory"/hypr/monitors.conf /home/"$USER"/.config/hypr/monitors.conf
+for config_file in "$directory"/hypr/*.conf; do
+    base_name=$(basename "$config_file")
+    target_path="/home/$USER/.config/hypr/$base_name"
+    ln -sf "$config_file" "$target_path"
+done
