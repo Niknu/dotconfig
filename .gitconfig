@@ -1,6 +1,10 @@
 # The base is from this website: https://blog.gitbutler.com/how-git-core-devs-configure-git#clearly-makes-git-better
 # clearly makes git better
 
+[alias]
+	tree = log --graph --all --date=relative --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset) %C(cyan)- %an%C(reset)'
+	ltree = log --graph --date=relative --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset) %C(cyan)- %an%C(reset)'
+
 [column]
         ui = auto
 [branch]
