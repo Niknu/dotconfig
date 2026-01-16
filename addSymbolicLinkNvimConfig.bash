@@ -7,10 +7,8 @@ fi
 
 directory="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-configPath="nvim/lua/plugins"
+configFilePath="/nvim/lua/config/options.lua"
 
-for config_file in "$directory/$configPath"/*.lua; do
-    base_name=$(basename "$config_file")
-    target_path="/home/$USER/.config/$configPath/$base_name"
-    ln -sf "$config_file" "$target_path"
-done
+target_path="/home/$USER/.config$configFilePath"
+
+ln -sf ""$directory$configFilePath "$target_path"
